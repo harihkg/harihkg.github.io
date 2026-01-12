@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harihara Kaveri Gopi</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg1: #1e1b36;
+      --bg2: #090b1f;
+      --accent: rgba(255,255,255,0.2);
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      background-size: 300% 300%;
+      animation: bgMotion 15s ease infinite;
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    @keyframes bgMotion {
+      0% {background-position: 0% 0%}
+      50% {background-position: 100% 100%}
+      100% {background-position: 0% 0%}
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      z-index: 100;
+      display: flex;
+      gap: 25px;
+      font-size: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #dcdcdc;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 1.6s forwards ease;
+    }
+
+    .hero img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: .9s ease;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .glass {
+      background: var(--accent);
+      padding: 35px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0px);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <img src="profile.jpeg" alt="Profile Picture">
+    <h1>Harihara Kaveri Gopi</h1>
+    <p>Web Developer • Designer • AI Student</p>
+  </div>
+
+  <section id="about">
+    <div class="glass">
+      <h2>About Me</h2>
+      <p>
+        I am Harihara Kaveri Gopi, currently pursuing B.Tech in Artificial Intelligence and Data Science at Sri Venkateswara College of Engineering.
+        CGPA: 7.766. I serve as the Design and Editorial Lead of the Reading Club, volunteer in the Science Club, and participate in the Speakers Forum.
+      </p>
+      <p>
+        I specialize in design, content creation, educational event coordination, and developing software tools involving data processing and AI integration.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="glass">
+      <h2>Skills</h2>
+      <p>
+        • C, C++, Java, Python, SQL<br>
+        • Poster design & visual content creation<br>
+        • Club Roles: Design & Editorial Lead, Volunteer, Speaker<br>
+        • Projects: FileAnalyzer (Java), Sign Language to Speech Converter<br>
+        • Interests: Tech, Design, Movies
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="glass">
+      <h2>Contact</h2>
+      <p>
+        Email: kaaverigopihari1807@gmail.com<br>
+        Instagram: @hariheut<br>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Harihara Kaveri Gopi — All Rights Reserved
+  </footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+function revealOnScroll() {
+  const trigger = window.innerHeight * 0.85;
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < trigger) sec.classList.add("visible");
+  });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
